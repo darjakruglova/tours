@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Яроблтур-подбор туров</title>
+    <meta name="description" content="Продажа туров " />
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="sass/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">  
+  </head>
+  <body>
+    <div class="container">   
+  <nav class="breadcrumb">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="/">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_59_9891)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.63496 0.213781C4.8433 0.0287356 5.1571 0.0287356 5.36544 0.213781L9.74044 4.09965C9.96755 4.30137 9.98813 4.649 9.78642 4.87611C9.5847 5.10322 9.23707 5.1238 9.00996 4.92208L8.5252 4.49152V8.75C8.5252 9.05375 8.27896 9.3 7.9752 9.3H2.0252C1.72144 9.3 1.4752 9.05375 1.4752 8.75V4.49152L0.990443 4.92208C0.763335 5.1238 0.415703 5.10322 0.213985 4.87611C0.0122679 4.649 0.0328514 4.30137 0.25996 4.09965L4.63496 0.213781ZM2.5752 3.5145V8.2H7.4252V3.5145L5.0002 1.36062L2.5752 3.5145Z" fill="#00509E" />
+        </g>
+        <defs>
+          <clipPath id="clip0_59_9891">
+            <rect width="10" height="10" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </a></li>
+      <li class="breadcrumb-item"><a href="/">
+   Абхазия
+      </a></li>
+      <li class="breadcrumb-item"><a href="/">
+        График экскурсионных туров
+      </a></li>
+    </ul>
+  </nav>
+  </div>
+
+
+  <div class="grafik">
+    <div class="container">
+      <div class="grafik__wrapper">
+  
+        <a href="#" class="mobile__filter  toggle-section ">
+          <div class="mobile__filter-show toggle-button">
+            Фильтр
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14 2.66669L7 9.66669L-1.56563e-06 2.66669L1.75 0.916689L7 6.16669L12.25 0.916688L14 2.66669Z" fill="#00509E" />
+            </svg>
+          </div>
+        </a>
+        <div class="filter rooms-details">
+      
+  
+          <div class="filter-section ">
+              <label><input type="checkbox"> Только гарантированные места</label>
+          </div>
+
+          <div class="filter-section">
+              <strong>Город отправления</strong>
+              <label><input type="checkbox"> Ярославль</label>
+              <label><input type="checkbox"> Гаврилов-Ям</label>
+              <label><input type="checkbox"> Иваново</label>
+              <label><input type="checkbox"> Кострома</label>
+              <label><input type="checkbox"> Переславль-Залесский</label>
+              <label><input type="checkbox"> Ростов</label>
+              <label><input type="checkbox"> Рыбинск</label>
+              <label><input type="checkbox"> Сергиев Посад</label>
+              <label><input type="checkbox"> Тутаев</label>
+          </div>
+          <div class="filter-section">
+              <strong>Тип тура</strong>
+              <label><input type="checkbox"> Гастрономический</label>
+              <label><input type="checkbox"> Активный</label>
+              <label><input type="checkbox"> В мире животных</label>
+              <label><input type="checkbox"> Паломнический</label>
+              <label><input type="checkbox"> Семейный</label>
+              <label><input type="checkbox"> Исторический</label>
+          </div>
+      </div>
+
+
+
+
+      <div class="cards">
+     
+        <a href="#" class="tour-card tour-card__odnodnev">
+          <div class="tour-card__img">
+            <div class="tour-card__date">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_59_5535)">
+                <path d="M0 5C0 2.23858 2.23858 0 5 0H40V40H0V5Z" fill="#FFE100"></path>
+                <path d="M28.7996 16H30.3996V19.2H28.7996V16ZM9.59961 16H11.1996V19.2H9.59961V16ZM23.1996 23.2H24.7996V24.8H23.1996V23.2ZM15.1996 23.2H16.7996V24.8H15.1996V23.2Z" fill="#04020F"></path>
+                <path d="M24 10.4H16C14.9395 10.4013 13.9228 10.8231 13.173 11.573C12.4231 12.3228 12.0013 13.3395 12 14.4V25.6C12 26.0243 12.1686 26.4313 12.4686 26.7314C12.7687 27.0314 13.1757 27.2 13.6 27.2V29.6H15.2V27.2H24.8V29.6H26.4V27.2C26.8242 27.1994 27.2308 27.0306 27.5307 26.7307C27.8306 26.4307 27.9994 26.0241 28 25.6V14.4C27.9987 13.3395 27.5769 12.3228 26.827 11.573C26.0772 10.8231 25.0605 10.4013 24 10.4ZM26.4 15.2V20H13.6V15.2H26.4ZM16 12H24C24.4947 12.0015 24.9769 12.1561 25.3803 12.4425C25.7836 12.729 26.0884 13.1333 26.2528 13.6H13.7472C13.9116 13.1333 14.2164 12.729 14.6197 12.4425C15.0231 12.1561 15.5053 12.0015 16 12ZM13.6 25.6V21.6H26.4008L26.4016 25.6H13.6Z" fill="#04020F"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_59_5535">
+                  <rect width="40" height="40" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+
+          </div>
+
+            <img src="/img/image.jpg" alt="Тур" class="tour-card__image">
+          
+          </div>
+          
+          <div class="tour-card__info">
+            <div class="tour-card__swiper">
+              <div class="swiper-result-title">Даты заездов:</div>
+              
+              <div class="swiper swiper-result">
+
+              <svg class="swiper-button-prev prev-result" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.90512 0.612458L1.00508 4.5125C0.87579 4.64179 0.803153 4.81715 0.803153 5C0.803153 5.18285 0.87579 5.35821 1.00508 5.4875L4.90512 9.38754C5.00149 9.48426 5.12442 9.55019 5.2583 9.57696C5.39219 9.60373 5.53101 9.59015 5.65717 9.53793C5.78332 9.48572 5.89114 9.39722 5.96694 9.28365C6.04273 9.17009 6.08311 9.03657 6.08293 8.90004L6.08196 5.68933L18.7928 5.69031L18.7928 4.30969L6.08196 4.31067L6.08293 1.09996C6.08311 0.963426 6.04273 0.829912 5.96693 0.716347C5.89114 0.602783 5.78332 0.514282 5.65717 0.462065C5.53101 0.409847 5.39219 0.396265 5.2583 0.42304C5.12442 0.449814 5.00149 0.515739 4.90512 0.612458Z" fill="#04020F" />
+              </svg>
+              
+              <div class="swiper-wrapper wrapper-slider">
+                <div class="swiper-slide slide-result">11.10.2024</div>
+                <div class="swiper-slide slide-result">12.10.2024</div>
+                <div class="swiper-slide slide-result">13.10.2024</div>
+                <div class="swiper-slide slide-result">14.10.2024</div>
+                <div class="swiper-slide slide-result">15.10.2024</div>
+                <div class="swiper-slide slide-result">16.10.2024</div>
+                <div class="swiper-slide slide-result">17.10.2024</div>
+                <div class="swiper-slide slide-result">18.10.2024</div>
+              </div>
+
+              <svg class="swiper-button-next next-result" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.0949 9.38754L17.9949 5.4875C18.1242 5.35821 18.1968 5.18285 18.1968 5C18.1968 4.81715 18.1242 4.64179 17.9949 4.5125L14.0949 0.612458C13.9985 0.51574 13.8756 0.449814 13.7417 0.42304C13.6078 0.396266 13.469 0.409848 13.3428 0.462065C13.2167 0.514283 13.1089 0.602784 13.0331 0.716348C12.9573 0.829912 12.9169 0.963426 12.9171 1.09996L12.918 4.31067L0.207152 4.30969V5.69031L12.918 5.68933L12.9171 8.90004C12.9169 9.03657 12.9573 9.17009 13.0331 9.28365C13.1089 9.39722 13.2167 9.48572 13.3428 9.53793C13.469 9.59015 13.6078 9.60373 13.7417 9.57696C13.8756 9.55019 13.9985 9.48426 14.0949 9.38754Z" fill="#04020F" />
+              </svg>
+            </div>
+
+          </div>
+            
+              <div class="tour-card__header">
+                <div class="tour-card__title">Москва. Москвари ум на ВДНХ и Красная площадь
+                </div>
+                  <div class="tour-card__price">от 3 200 р</div>
+                  <div class="tour-card__details">Подробнее</div>
+              </div>
+              <div class="tour-card__description">
+                Вы увидите основные достопримечательности города, узнаете о местных обычаях и традициях празднования нового года, а также познакомитесь с Кыш Бабаем, татарским Дедом Морозом    </div>
+          </div>
+      </a>
+
+
+
+
+
+      <a href="#" class="tour-card tour-card__odnodnev">
+        <div class="tour-card__img">
+          <div class="tour-card__date">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_59_3053)">
+                <path d="M0 5C0 2.23858 2.23858 0 5 0H40V35C40 37.7614 37.7614 40 35 40H0V5Z" fill="#FFE100" />
+                <path d="M20.0008 8.79999C13.8158 8.79999 8.80078 13.815 8.80078 20C8.80078 26.185 13.8158 31.2 20.0008 31.2C26.1858 31.2 31.2008 26.185 31.2008 20C31.2008 13.815 26.1858 8.79999 20.0008 8.79999ZM20.0008 29.3C14.8658 29.3 10.7008 25.135 10.7008 20C10.7008 17.775 11.4833 15.73 12.7883 14.13L25.8708 27.2125C24.2708 28.5175 22.2258 29.3 20.0008 29.3ZM27.2133 25.87L14.1308 12.7875C15.7308 11.4825 17.7758 10.7 20.0008 10.7C25.1358 10.7 29.3008 14.865 29.3008 20C29.3008 22.225 28.5183 24.27 27.2133 25.87Z" fill="#04020F" />
+              </g>
+              <defs>
+                <clipPath id="clip0_59_3053">
+                  <rect width="40" height="40" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+        </div>
+
+          <img src="/img/image.jpg" alt="Тур" class="tour-card__image">
+        
+        </div>
+        
+        <div class="tour-card__info">
+          <div class="tour-card__swiper">
+            <div class="swiper-result-title">Даты заездов:</div>
+            
+            <div class="swiper swiper-result">
+
+            <svg class="swiper-button-prev prev-result" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.90512 0.612458L1.00508 4.5125C0.87579 4.64179 0.803153 4.81715 0.803153 5C0.803153 5.18285 0.87579 5.35821 1.00508 5.4875L4.90512 9.38754C5.00149 9.48426 5.12442 9.55019 5.2583 9.57696C5.39219 9.60373 5.53101 9.59015 5.65717 9.53793C5.78332 9.48572 5.89114 9.39722 5.96694 9.28365C6.04273 9.17009 6.08311 9.03657 6.08293 8.90004L6.08196 5.68933L18.7928 5.69031L18.7928 4.30969L6.08196 4.31067L6.08293 1.09996C6.08311 0.963426 6.04273 0.829912 5.96693 0.716347C5.89114 0.602783 5.78332 0.514282 5.65717 0.462065C5.53101 0.409847 5.39219 0.396265 5.2583 0.42304C5.12442 0.449814 5.00149 0.515739 4.90512 0.612458Z" fill="#04020F" />
+            </svg>
+            
+            <div class="swiper-wrapper wrapper-slider">
+              <div class="swiper-slide slide-result">11.10.2024</div>
+              <div class="swiper-slide slide-result">12.10.2024</div>
+              <div class="swiper-slide slide-result">13.10.2024</div>
+              <div class="swiper-slide slide-result">14.10.2024</div>
+              <div class="swiper-slide slide-result">15.10.2024</div>
+              <div class="swiper-slide slide-result">16.10.2024</div>
+              <div class="swiper-slide slide-result">17.10.2024</div>
+              <div class="swiper-slide slide-result">18.10.2024</div>
+            </div>
+
+            <svg class="swiper-button-next next-result" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.0949 9.38754L17.9949 5.4875C18.1242 5.35821 18.1968 5.18285 18.1968 5C18.1968 4.81715 18.1242 4.64179 17.9949 4.5125L14.0949 0.612458C13.9985 0.51574 13.8756 0.449814 13.7417 0.42304C13.6078 0.396266 13.469 0.409848 13.3428 0.462065C13.2167 0.514283 13.1089 0.602784 13.0331 0.716348C12.9573 0.829912 12.9169 0.963426 12.9171 1.09996L12.918 4.31067L0.207152 4.30969V5.69031L12.918 5.68933L12.9171 8.90004C12.9169 9.03657 12.9573 9.17009 13.0331 9.28365C13.1089 9.39722 13.2167 9.48572 13.3428 9.53793C13.469 9.59015 13.6078 9.60373 13.7417 9.57696C13.8756 9.55019 13.9985 9.48426 14.0949 9.38754Z" fill="#04020F" />
+            </svg>
+          </div>
+
+        </div>
+          
+            <div class="tour-card__header">
+              <div class="tour-card__title">Москва. Москвари ум на ВДНХ и Красная площадь
+              </div>
+                <div class="tour-card__price">от 3 200 р</div>
+                <div class="tour-card__details">Подробнее</div>
+            </div>
+            <div class="tour-card__description">
+              Вы увидите основные достопримечательности города, узнаете о местных обычаях и традициях празднования нового года, а также познакомитесь с Кыш Бабаем, татарским Дедом Морозом    </div>
+        </div>
+    </a> 
+
+
+      <ul class="pagination">
+        <li class="prev">
+          <a data-page="1" href="#" aria-label="{Prev}">
+            <svg width="29" height="10" viewBox="0 0 29 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.90512 0.612458L1.00508 4.5125C0.87579 4.64179 0.803153 4.81715 0.803153 5C0.803153 5.18285 0.87579 5.35821 1.00508 5.4875L4.90512 9.38754C5.00149 9.48426 5.12442 9.55019 5.2583 9.57696C5.39219 9.60373 5.53101 9.59015 5.65717 9.53793C5.78332 9.48572 5.89114 9.39722 5.96694 9.28365C6.04273 9.17009 6.08311 9.03657 6.08293 8.90004L6.08196 5.68933L28.7928 5.6903L28.7928 4.30969L6.08196 4.31067L6.08293 1.09996C6.08311 0.963426 6.04273 0.829912 5.96693 0.716347C5.89114 0.602783 5.78332 0.514282 5.65717 0.462065C5.53101 0.409847 5.39219 0.396265 5.2583 0.42304C5.12442 0.449814 5.00149 0.515739 4.90512 0.612458Z" fill="#04020F" />
+            </svg><div>Назад</div>			
+          </a>
+        </li>
+        <div class="pagination__wrapper">
+          <li><a data-page="1" href="#">1</a></li>
+          <li><a data-page="2" href="#">2</a></li>
+          <li><span>...</span></li>
+         
+          <li><a data-page="4" href="#">14</a></li>
+          <li><a data-page="5" href="#">15</a></li>
+        
+          
+        </div>
+        <li class="next">
+          <a data-page="2" href="#" aria-label="Next">
+            <div>Вперед</div><svg width="29" height="10" viewBox="0 0 29 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.0949 9.38754L27.9949 5.4875C28.1242 5.35821 28.1968 5.18285 28.1968 5C28.1968 4.81715 28.1242 4.64179 27.9949 4.5125L24.0949 0.612458C23.9985 0.51574 23.8756 0.449814 23.7417 0.42304C23.6078 0.396266 23.469 0.409848 23.3428 0.462065C23.2167 0.514283 23.1089 0.602784 23.0331 0.716348C22.9573 0.829912 22.9169 0.963426 22.9171 1.09996L22.918 4.31067L0.207152 4.30969V5.69031L22.918 5.68933L22.9171 8.90004C22.9169 9.03657 22.9573 9.17009 23.0331 9.28365C23.1089 9.39722 23.2167 9.48572 23.3428 9.53793C23.469 9.59015 23.6078 9.60373 23.7417 9.57696C23.8756 9.55019 23.9985 9.48426 24.0949 9.38754Z" fill="#04020F" />
+            </svg>			</a>
+        </li>
+        
+      </ul>
+      </div>
+      </div>
+
+
+
+  
+    </div>
+    
+  </div>
+
+
+
+
+
+
+<section class="sendemail">
+  <div class="container">
+    <div class="sendemail__items">
+      <div class="sendemail__title">
+        Будьте в курсе новостей, скидок и акций
+      </div>
+      <div class="sendemail__input">
+        <input
+          type="email"
+          class="input__name"
+          placeholder="Введите ваш e-mail"
+        />
+     
+        <button class="btn btn__sendemail">Отправить</button>
+      </div>
+      <p>
+        Отправляя нам заполненную форму, вы соглашаетесь с
+        <a href="#"> политикой конфиденциальности </a>
+        и даете согласие на
+        <a href="#"> обработку персональных данных </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <!-- Логотип и соцсети -->
+      <div class="logo-section">
+        <a href="/" class="logo">
+          <img src="./img/logo.svg" alt="Яроблтур" />
+        </a>
+        <div class="social-icons">
+          <a href="#"
+            ><img src="./img/icons/telegramm.svg" alt="Telegram"
+          /></a>
+          <a href="#"
+            ><img src="./img/icons/ok.svg" alt="Одноклассники"
+          /></a>
+          <a href="#"><img src="./img/icons/vk.svg" alt="VK" /></a>
+          <a href="#"
+            ><img src="./img/icons/watsapp.svg" alt="WhatsApp"
+          /></a>
+          <a href="#"><img src="./img/icons/dzen.svg" alt="Red" /></a>
+        </div>
+        <div class="footer__privace">
+          <a href="#"
+            >Согласие на обработку<br />
+            персональных данных</a
+          >
+          <a href="#"
+            >Политика конфиденциальности<br />
+            в отношении обработки ПД</a
+          >
+        </div>
+      </div>
+
+      <!-- Меню -->
+
+      <div class="menu-column">
+        <h3>О нас</h3>
+        <a href="#">О компании</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Реквизиты</a>
+        <a href="#">Вакансии</a>
+        <a href="#">Наши партнеры</a>
+      </div>
+
+      <div class="menu-column">
+        <h3>Туристам</h3>
+        <a href="#">Способы оплаты</a>
+        <a href="#">Дисконтная программа</a>
+        <a href="#">Подарочный сертификат</a>
+        <a href="#">Вопросы-ответы</a>
+        <a href="#">Где купить тур</a>
+      </div>
+
+      <div class="menu-column">
+        <h3>Агентствам</h3>
+        <a href="#">Как начать сотрудничество</a>
+        <a href="#">Как оплатить</a>
+        <a href="#">Документы для работы</a>
+        <a href="#">Ваша комиссия</a>
+        <a href="#">Туры на вашем сайте</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2000–2024 Яроблтур — Все права защищены</p>
+      <p>
+        Разработка сайта:
+        <a href="https://miridea.ru" target="_blank">miridea.ru</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<script src="./js/script.js"></script>
+  </body>
+</html>

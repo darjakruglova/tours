@@ -1,0 +1,61 @@
+// Главная страница блок 2 Услуги
+
+.services {
+  @include adaptiv-value("padding-top", 60, 45, 0);
+  @include adaptiv-value("padding-bottom", 70, 45, 0);
+  position: relative;
+  // .services__slider
+
+  &__slider {
+  }
+}
+
+.service-card {
+  text-align: center;
+  color: var(--color-text);
+  &:hover {
+    color: var(--color-blue);
+  }
+  &:hover .svg-bg {
+    fill: var(--color-yellow);
+  }
+  &__icon {
+    display: inline-block;
+    cursor: pointer;
+
+    .svg-bg {
+      transition: fill 0.3s ease;
+    }
+  }
+
+  // .service-card__title
+
+  &__title {
+    @include adaptiv-value("font-size", 14, 10, 0);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 30%;
+  cursor: pointer;
+  z-index: 10;
+}
+.custom-prev {
+  //left: 20%;
+  @include adaptiv-value("left", 80, 0, 0);
+  &:hover path {
+    fill: var(--color-blue);
+  }
+}
+.custom-next {
+ // right: 20%;
+  @include adaptiv-value("right", 80, 0, 0);
+
+  &:hover path {
+    fill: var(--color-blue);
+  }
+}

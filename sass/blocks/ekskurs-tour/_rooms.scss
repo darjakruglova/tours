@@ -1,0 +1,243 @@
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  &__stars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  &__geo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-transform: uppercase;
+
+    p{
+      font-size: 13px;
+      font-family: var(--font-bold);
+    }
+  }
+  h1 {
+    @include adaptiv-value("font-size", 40, 32, 0);
+    color: var(--color-blue);
+  }
+}
+
+.info-row {
+  display: flex;
+}
+.info-row__list{
+  align-items: baseline;
+  display: flex;
+  white-space: nowrap;
+  flex: 2;
+}
+ .info-row__list:after {
+  background-image: linear-gradient(90deg, currentcolor, currentcolor 25%, #0000 0, #0000);
+}
+.info-row__list:after {
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 4px 1px;
+  margin: 0 5px;
+}
+.info-row__list:after {
+  content: "";
+  display: block;
+  height: 1px;
+  min-width: 25px;
+  width: 100%;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  position: relative;
+}
+
+.info-label, .info-value {
+  z-index: 1;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.rooms {
+  margin-top:30px;
+  .btn-allresult {
+    display: block;
+    text-align: center;
+    background: var(--color-yellow);
+    color: var(--color-text);
+    padding: 15px;
+    font-size: 16px;
+    font-family: var(--font-semi);
+  }
+  &__wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-grey);
+    padding: 15px 0 15px 0;
+    @include adaptiv-value("padding-right", 35, 5, 0);
+    border-radius: 5px;
+    &-name {
+      color: var(--color-text);
+      font-size: 16px;
+      text-transform: uppercase;
+      font-family: var(--font-bold);
+      display: flex;
+      align-items: center;
+      @include adaptiv-value("gap", 20, 5, 0);
+      flex: 0 0 30%;
+    }
+
+    &-hotel {
+      display: flex;
+      align-items: center;
+      gap: 10px; 
+      flex: 0 0 17%;
+
+      p {
+        max-width: 215px;
+        color: #0056b3;
+        text-decoration: none;
+        line-height: normal;
+        font-size: 13px;
+        font-family: var(--font-bold);
+      }
+    }
+
+    &-availability {
+      color: #009e2f;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+    }
+    &-request {
+      color: var(--color-text);
+    }
+    &-price {
+      background: var(--color-yellow);
+      padding: 10px;
+      border-radius: 5px;
+      color:var(--color-text);
+      font-size: 16px;
+      font-family: var(--font-bold);
+    }
+    &-toggle {
+      button {
+        background: #fff;
+        border: none;
+        padding: 13px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+
+        svg.rotated {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          background: var(--color-blue);
+          svg path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    
+    &-details {
+      display: none;
+      padding: 15px;
+      background: #f1f1f1;
+      border: 1px solid #dcdcdc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    &-details {
+      display: none;
+      padding: 15px;
+      background: #f1f1f1;
+      border: 1px solid #dcdcdc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  .rooms-details {
+    display: none;
+    padding: 20px;
+    background: var(--color-grey);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .card {
+    display: flex;
+    gap: 20px;
+  }
+
+  .card__image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .card__info {
+    flex: 2;
+    &-list{
+      display:flex;
+      flex-direction: column;
+      @include adaptiv-value("gap", 19, 15, 0);
+
+    }
+  }
+
+  .card__info h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--color-text-grey);
+  }
+
+  .card__info p {
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+  .card__info .details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card__map {
+    flex: 1;
+  }
+
+  .card__map iframe {
+    width: 374px;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+  }
+
+
+}
+
+.rooms-details.active {
+  display: block;
+}

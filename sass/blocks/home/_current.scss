@@ -1,0 +1,48 @@
+// Главная страница блок 4 Актуальные предложения
+
+.current {
+  @include adaptiv-value("padding-top", 60, 45, 0);
+  @include adaptiv-value("padding-bottom", 70, 45, 0);
+  position: relative;
+  background-color: var(--color-grey);
+  // .services__slider
+  .custom-prev,
+  .custom-next {
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  &__link {
+    color: var(--color-text);
+    &:hover &-title {
+      color: var(--color-blue);
+    }
+    &-img {
+      position: relative;
+      padding: 0 10px;
+    }
+    &-price {
+      position: absolute;
+      bottom: 30%;
+      background-color: var(--color-yellow);
+      z-index: 999;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 5px;
+      margin-left: -10px;
+      span{
+        font-weight: bold;
+      }
+    }
+    img {
+      margin-bottom: 20px;
+    }
+    &-title {
+      font-size: 20px;
+      color: var(--color-text);
+      padding-left: 10px;
+    font-family: var(--font-semi);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.tour-card{
+.tour-card__img{
+  position: relative;
+}
+  &__odnodnev{
+    .tour-card__date{
+      background:none;
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+// Главная страница блок 3 Туры
+.tours {
+  @include adaptiv-value("padding-bottom", 70, 45, 0);
+  &__link {
+    position: relative;
+    &:hover &-title {
+      color: var(--color-yellow);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 24, 76, 0) 40%,
+        rgba(0, 24, 76, 0.8) 100%
+      );
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+   
+
+    &-content {
+      position: absolute;
+      z-index: 999;
+      bottom: 12%;
+      color: #fff;
+      @include adaptiv-value("font-size", 20, 18, 0);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items:center;
+      gap: 10px;
+      padding: 0 20px;
+      width: 95%;
+   
+    }
+  }
+  .swiper-pagination {
+    position: absolute;
+    left: 5%;
+    transform: translateX(-50%);
+    z-index: 10;
+    bottom: 20px;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: var(--color-text-grey);
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-yellow);
+    opacity: 1;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    img {
+      border-radius: 10px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__large {
+    flex: 2;
+    display: flex;
+    align-items: stretch;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tours__link-title{
+      flex: 0 0 50%;
+    }
+  }
+
+  &__small {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+  &__small-first,
+  &__small-second {
+    flex: 1;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+

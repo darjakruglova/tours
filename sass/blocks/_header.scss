@@ -1,0 +1,401 @@
+// Главная страница блок Шапка
+.nav-link {
+  color: var(--color-text);
+}
+
+#date-range {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calendar-container {
+  position: relative;
+}
+
+.confirm-btn {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: none; /* скрыто по умолчанию */
+}
+
+.confirm-btn:hover {
+  background-color: #ffd700;
+}
+
+.flatpickr-day.today {
+  border-radius: 5px;
+  background-color: var(--color-yellow);
+  border: none;
+}
+.flatpickr-calendar {
+}
+#date-range {
+  padding: 14px 20px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.header {
+  background: var(--color-grey);
+  // background-image: url(/img/header-img.jpg);
+  // background-repeat:no-repeat;
+  // background-position:bottom;
+  // background-size: contain;
+  // min-height: 300px;
+  // max-height: 730px;
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 40%;
+    padding: 15px 30px;
+    background-color: #1464b2;
+    color: #fff;
+    font-size: 14px;
+    .big-search {
+      cursor: pointer;
+      &:hover {
+        color: var(--color-yellow);
+      }
+    }
+    &-grafik {
+      background-color: rgba(243, 244, 247, 0.1);
+      padding: 8px;
+      border-radius: 3px;
+      color: #fff;
+    }
+  }
+  &__link {
+    display: flex;
+    @include adaptiv-value("gap", 50, 5, 0);
+    justify-content: space-between;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiv-value("padding-top", 30, 10, 0);
+    @include adaptiv-value("padding-bottom", 20, 10, 0);
+  }
+  &__banner {
+    width: 100%;
+    height: 400px;
+    text-decoration: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  &__logo {
+    img {
+      @include adaptiv-value("height", 40, 20, 0);
+    }
+  }
+
+  &__tabs {
+    position: relative;
+   // display: flex;
+   overflow: hidden;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+.nav {
+  &__link {
+    color: var(--color-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &--offices,
+    &--agencies {
+      @include adaptiv-value("font-size", 18, 12, 0);
+      font-family: var(--font-semi);
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+    &--account {
+      &:hover {
+        svg path {
+          fill: var(--color-text);
+        }
+      }
+    }
+  }
+}
+
+.tabs {
+  &__item {
+    margin-bottom: 0;
+    padding: 17px 22px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--color-text);
+    font-family: var(--font-bold);
+    &-name {
+      letter-spacing: 0.05em;
+      line-height: 138%;
+      
+    }
+
+    &:hover {
+      background-color: var(--color-yellow);
+      svg path {
+        fill: var(--color-text);
+      }
+    }
+  }
+
+  &__link {
+    padding: 24px 28px;
+    border-radius: 8px;
+
+    &--highlight {
+      background: var(--color-yellow);
+      color: var(--color-blue);
+    }
+  }
+}
+
+.content {
+  &__pane {
+    background: var(--color-blue);
+  }
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: end;
+  padding: 30px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+  .age-selector {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+
+    display: block;
+    position: absolute;
+    top: 115px;
+  }
+  .counter {
+    margin-bottom: 20px;
+  }
+  .decrement,
+  .increment {
+    background-color: var(--color-grey);
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-family: var(--font-bold);
+    font-size: 20px;
+    cursor: pointer;
+    &:hover{
+      background-color:var(--color-yellow)
+    }
+  }
+  .count {
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .child-age-selector {
+  }
+  .age-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .age-btn {
+    background-color: var(--color-grey);
+    border: none;
+    padding: 5px 10px;
+    min-width: 47px;
+    cursor: pointer;
+    &:hover{
+      background-color:var(--color-yellow)
+    }
+  }
+}
+
+.form__group--button {
+  align-self: flex-end;
+  min-width: 150px;
+}
+
+.form__label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--color-text-grey);
+  font-family: var(--font-semi);
+}
+
+.form__input {
+  padding: 14px 20px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.form__button {
+  padding: 14px;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-yellow);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tab-content {
+  display: none;
+  position: relative;
+}
+
+.tab-content.active {
+  display: block;
+  z-index: 10;
+}
+// .content__pane--active::before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 50%; /* Центрируем по горизонтали */
+//   transform: translateX(-50%); /* Сдвигаем на половину ширины */
+//   width: 100vw; /* Ширина на всю ширину экрана */
+//   height: 100%; /* Высота на всю высоту родительского блока */
+//   background-image: url('/img/header-img.jpg');
+//   background-size: cover; /* Масштабируем изображение */
+//   background-position: center; /* Центрируем изображение */
+//   z-index: -1; /* Устанавливаем z-index ниже текста */
+
+// }
+
+.tab.active {
+  background-color: var(--color-blue);
+  color: #fff;
+  //margin-top: -10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  svg path {
+    fill: var(--color-yellow);
+  }
+  &:hover svg {
+    fill: var(--color-yellow);
+  }
+}
+
+.filters {
+  background: #0077cc;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  //gap: 20px;
+  color: #fff;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-food {
+      & input[type="checkbox"] {
+        border-radius: 50px !important;
+
+        &:checked::before {
+          content: "●" !important;
+          border-radius: 50px !important;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-family: var(--font-semi);
+    font-size: 14px;
+    color: var(--color-text-grey);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    &:hover {
+      color: var(--color-yellow);
+      & input[type="checkbox"] {
+        border: 2px solid var(--color-yellow);
+      }
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+
+      &:checked::before {
+        content: "✔";
+        background: var(--color-yellow);
+        font-size: 16px;
+        width: 20px;
+        height: 20px;
+        display: grid;
+        place-content: center;
+        border-radius: 3px;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      font-size: 16px;
+      font-family: var(--font-reg);
+    }
+  }
+
+  &__toggle {
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+      color: var(--color-yellow);
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

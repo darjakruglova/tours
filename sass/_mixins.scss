@@ -1,0 +1,30 @@
+$maxWidth: 1920;
+$maxWidthContainer: 1290;
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+
+  // Значение для начального размера
+  #{$property}: $startSize + px;
+
+  // Ограничение по ширине
+  @media (max-width: #{$maxWidth}px) {
+    @if $type == 1 {
+      @media (max-width: #{$maxWidthContainer}px) {
+        #{$property}: calc(
+          #{$minSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidthContainer} - 360))
+        );
+      }
+    } @else if $type == 2 {
+      @media (min-width: #{$maxWidthContainer}px) {
+        #{$property}: calc(
+          #{$minSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidth} - 360))
+        );
+      }
+    } @else {
+      #{$property}: calc(
+        #{$minSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidth} - 360))
+      );
+    }
+  }
+}

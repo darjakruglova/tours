@@ -1,0 +1,418 @@
+
+// Устройства Large (настольные компьютеры, менее 1200 пикселей)
+@media (max-width: 1199.98px) {
+  .tours__link-content{
+    width: auto;
+  }
+  .tours-content .tours__slider{
+    width: 59%;
+  }
+  .tours-content .tours__info {
+    width: 40%;
+  }
+}
+
+// Устройства Medium (планшеты, менее 992 пикселей)
+@media (max-width: 991.98px) {
+
+
+  .tour-card__swiper{
+    flex-direction: column;
+    gap: 10px;
+align-items:start;
+    .swiper-result {
+      width: 100%;
+    }
+
+    .prev-result {
+      left: 0;
+      top:70%
+  }
+  .next-result{
+    right: 0;
+    top:70%
+  }
+
+}
+  .tour-card {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+  .tour-card__img{
+    width: 100%;
+    img {
+      width: 100%;
+      height: 290px;
+    }
+  }
+  .tours-content .tours__slider{
+    width: 67%;
+  }
+  .tours-content .tours__info {
+    width: 32%;
+  }
+  
+  .toggle-section{
+    flex-wrap: wrap;
+    // justify-content: flex-end;
+    @include adaptiv-value("column-gap", 20, 5, 0);
+  }
+  .rooms__option-name {
+  flex: 1 0 30%;
+  }
+  .rooms__option-hotel {
+  flex: 1 0 17%;
+  }
+
+  .tours{
+    .swiper-pagination{
+      left: 50%;
+    }
+  }
+  .sendemail__items {
+    flex-direction: column;
+  }
+  .sendemail {
+    text-align: center;
+    &__title {
+      flex: 1 1 calc(30% - 20px);
+    }
+  }
+  .card{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .rooms .card__info{
+    flex: 1 1 10%;
+  }
+  .rooms .card__map iframe{
+    height: 200px;
+    width: 100%;
+  }
+  .rooms .card__map{
+    flex: 1 1 100%;
+  }
+}
+
+// Устройства Small (телефоны с горизонтальной ориентацией, менее 768 пикселей)
+@media (max-width: 767.98px) { 
+  .tour-card__date-none {
+    display: none;
+  }
+  .tour-card__info-block {
+      display: block;
+  }
+  .tabs__item {
+display: block;
+text-align: center;
+font-size: 12px;
+padding: 15px 0px;
+&-name{
+ //width: 140px;
+ margin: auto;
+}
+br{
+  display: none;
+}
+}
+
+  .prev div{
+    display: none;
+  }
+  .prev {
+    width: 30px;
+    background-color: white;
+    a svg {
+      margin-right: 0;
+    }
+  }
+  .next div{
+    display: none;
+  }
+  .next {
+    width: 30px;
+    background-color: white;
+    a svg {
+      margin-left: 0;
+    }
+  }
+  .mobile__filter{
+    display: flex;
+
+    &-show{
+      display: flex;
+          width: 100%;
+          text-align: center;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+    }
+
+  }
+  .grafik__wrapper {
+    flex-wrap: wrap;
+
+  }
+  .tour-card__img {
+    width: 100%;
+}
+  .grafik .cards {
+    width: 100%;
+}
+  .filter {
+    display: none;
+    width: 100%;
+    //display: none;
+  }
+  .content:first-of-type {
+    display: none;
+  }
+  .tours-content .tours__slider{
+    width: 100%;
+  }
+  .tours-content .tours__info {
+    width: 100%;
+  }
+  .couriers__image {
+    margin-right: 0;
+  }
+
+  .tours{
+&-content{
+  .d-block{
+    display:none;
+  }
+  .d-none{
+    display: block;
+  }
+}
+    &__large{
+      flex: auto;
+      height: 370px;
+    }
+
+    // &__small{
+    //   height: 170px;
+    // }
+  }
+  
+  }
+@media (max-width: 575.98px) {
+  .tour-card__swiper{
+    .prev-result {
+    display: none;
+  }
+  .next-result{
+    display: none;
+  }
+}
+
+  .tour-card__img img {
+    @include adaptiv-value("height", 540, 200, 0);
+  }
+  .tour-card__header {
+    flex-wrap: wrap;
+    gap: 13px;
+    //margin-top: -25px;
+  }
+  .tour-card__title {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+  .tour-card__locations{
+    margin-top: 18px;
+  }
+  
+  .tours-content .swiper-mainslide {
+    @include adaptiv-value("height", 540, 250, 0);
+  }
+
+  .rooms{
+.rooms-details{
+padding: 10px;
+}
+  .toggle-section{
+      padding: 10px;
+      padding-left: 20px;
+    }
+    .container{
+padding: 0;
+    }
+    &__option-name{
+    margin-left: -20px;
+    flex: 1 0 70%;
+    order: 1;
+  }
+}
+  .rooms__option-availability{
+    order: 5;
+}
+.rooms__option-toggle{
+  margin-top: 10px;
+  order: 2;
+}
+.rooms__option-hotel{
+  // margin-left: 12px;
+  flex: 1 0 85%;
+  order: 3;
+  p{
+    max-width: none;
+  }
+}
+.rooms__option-price{
+  // margin-left: 10px; 
+  order: 4;
+}
+.rooms__option-button{
+  order: 6;
+  flex: 1 0 85%;
+}
+.rooms__option-button button{
+  // margin-left: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+  
+  // .card {
+  //       flex-direction: column;
+  //     }
+    
+  
+  .sendemail{
+  .btn__sendemail{
+    width: 100%;
+  }
+  &__input{
+    flex-direction: column;
+    background-color:transparent;
+    padding: 0;
+    width: 100%;
+  
+   input{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius:4px;
+    display: block;
+   
+   }
+  }
+  }
+  
+  
+    .services-prev,.services-next{
+      display: none;
+          }
+    .services__slider{
+  
+      
+      .service-card{
+        &__title{
+          margin: 0;
+          margin-top: 11px;
+        }
+      
+  svg{
+    width: 90px;
+    height: 90px;
+  }
+      }
+  .swiper-wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+  
+   .swiper-slide{
+    width: 33%;
+  
+   }
+  }
+    }
+  
+  .header{
+  
+    &__link{
+      svg {
+        width: 14px;
+      }
+  .btn{
+    background:none;
+    padding: 0;
+    color:var(--color-blue);
+    font-size: 12px;
+    svg {
+      width: 14px;
+      path{
+        fill: var(--color-blue);
+    
+      }
+    }
+   
+  }
+  
+    }
+  &__logo img{
+   height: 30px;
+  }
+    &__top{
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+    .footer {
+      .d-none {
+        display: flex;
+        text-align: center;
+        margin-top: 25px;
+        flex-direction: column;
+        gap: 12px;
+        a {
+          font-size: 13px;
+          color: rgba(4, 2, 15, 0.5);
+          display: block;
+        }
+      }
+      .d-block {
+        display: none;
+      }
+      .social-icons a {
+        width: 30px;
+      }
+      &__wrapper {
+        text-align: center;
+        gap: 0;
+        flex-direction: column;
+      }
+      .logo-section {
+        align-items: center;
+      }
+      .footer-bottom {
+        .container {
+          justify-content: center;
+        }
+      }
+    }
+  
+    .tours__large {
+      .tours__link{
+        &-title{
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  @media (min-width: 767.98px) { 
+.swiper-menu{
+.swiper-slide{
+  width: auto;
+  height: auto;
+}
+
+}
+  }

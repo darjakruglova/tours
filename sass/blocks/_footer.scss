@@ -1,0 +1,95 @@
+// Главная страница блок подвал
+.footer {
+  &__privace {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include adaptiv-value("padding-top", 70, 40, 0);
+    @include adaptiv-value("padding-bottom", 85, 35, 0);
+    gap: 20px;
+  }
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    a {
+      color: rgba(4, 2, 15, 0.5);
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 50px;
+  }
+
+  .menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      font-size: 16px;
+      font-family: var(--font-reg);
+      margin-bottom: 10px;
+      color: rgba(4, 2, 15, 0.5);
+    }
+
+    a {
+      text-decoration: none;
+      font-family: var(--font-bold);
+      color: #04020f;
+      @include adaptiv-value("font-size", 14, 16, 0);
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: var(--color-grey);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(4, 2, 15, 0.5);
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    a {
+      color: var(--color-blue);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

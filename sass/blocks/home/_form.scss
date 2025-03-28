@@ -1,0 +1,103 @@
+.form {
+  background-image: url(/img/form-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  @include adaptiv-value("margin-top", 120, 50, 0);
+  color: #fff;
+
+  .btn-primary {
+    background-color: $accent-color;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 12px 73px;
+  }
+  .form-check {
+    font-size: 13px;
+  }
+  &__subtitle {
+    font-size: 16px;
+  }
+  &__inputs {
+    background: rgba(52, 52, 52, 0.8);
+    color: #fff;
+    @include adaptiv-value("padding", 40, 20, 0);
+    h3 {
+      @include adaptiv-value("font-size", 32, 20, 0);
+    }
+  }
+
+  option[default] {
+    display: none;
+  }
+
+  .phone-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .phone-field input[type="tel"] {
+    margin-right: 10px;
+  }
+  .phone-field button {
+    background-color: transparent;
+    color: $white;
+    border: none;
+  }
+  .phone-field button:disabled {
+    background-color: none;
+    cursor: not-allowed;
+  }
+
+  .couriers__image {
+    margin-right: -30%;
+  }
+  .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    color: $white;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 16px;
+    &::placeholder {
+      color: $white;
+    }
+
+    &:focus {
+      color: #a291b6;
+      background-color: transparent;
+      border-color: $accent-color;
+      outline: 0;
+      box-shadow: none;
+      &::placeholder {
+        color: #a291b6;
+      }
+    }
+  }
+  .btn-primary:disabled {
+    background-color: #78599c;
+  }
+
+  .form-check-input {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .form-check-label {
+    .form-check-input {
+      margin-right: 10px;
+    }
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}

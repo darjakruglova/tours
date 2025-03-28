@@ -1,0 +1,38 @@
+.tour-card__swiper {
+    margin-bottom: 15px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.swiper-result {
+    position: static;
+    width: 73%;
+}
+.swiper-result-title {
+    margin-right: 20px;
+    font-family: var(--font-reg);
+    font-size: 14px;
+    color: var(--color-text-grey);
+}
+.wrapper-slider {
+}
+.slide-result {
+    border-radius: 3px;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--color-grey);
+    font-family: var(--font-bold);
+    font-size: 14px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.prev-result{
+    width: 18px;
+    position: absolute;
+    left: 115px;
+}
+.next-result{
+    width: 18px;
+    position: absolute;
+    right: 0;
+}

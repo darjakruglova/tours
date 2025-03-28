@@ -1,0 +1,180 @@
+@import "../sass/normalize";
+@import "../sass/mixins";
+@import "../sass/blocks/header";
+@import "../sass/blocks/home/services";
+@import "../sass/blocks/home/tours";
+@import "../sass/blocks/home/sendemail";
+@import "../sass/blocks/home/current";
+
+
+@import "../sass/blocks/ekskurs-tour/rooms";
+@import "../sass/blocks/ekskurs-tour/tours-content";
+@import "../sass/blocks/grafik/grafik";
+@import "../sass/blocks/result/result";
+@import "../sass/blocks/grafik_odnodnev_ekskursiy/grafik_odnodnev_ekskursiy";
+@import "../sass/blocks/grafik_07/grafik_07";
+@import "../sass/blocks/result_08/result_08";
+@import "../sass/blocks/footer";
+@import "../sass/media";
+
+/* styles.scss */
+
+@font-face {
+  font-family: "MariadPro-bold";
+  src: url("../fonts/MyriadPro-Bold.eot");
+  src: url("../fonts/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MyriadPro-Bold.woff") format("woff"),
+    url("../fonts/MyriadPro-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MariadPro-semibold";
+  src: url("../fonts/MyriadPro-Semibold.eot");
+  src: url("../fonts/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MyriadPro-Semibold.woff") format("woff"),
+    url("../fonts/MyriadPro-Semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MariadPro-regular";
+  src: url("../fonts/MyriadPro-Regular.eot");
+  src: url("../fonts/MyriadPro-Regular.eot") format("embedded-opentype"),
+    url("../fonts/MyriadPro-Regular.woff") format("woff"),
+    url("../fonts/MyriadPro-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+:root {
+  --font-bold: "MariadPro-bold", sans-serif;
+  --font-reg: "MariadPro-regular", sans-serif;
+  --font-semi: "MariadPro-semibold", sans-serif;
+  --color-blue: #00509e;
+  --color-yellow: #ffe100;
+  --color-grey: #f3f4f7;
+  --color-text: #04020f;
+  --color-text-grey:#b6b6b6;
+  --color-text-white:#ffffff;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  font-family: var(--font-reg);
+}
+h2{
+  @include adaptiv-value("font-size", 30, 24, 0);
+  color: var(--color-blue);
+
+}
+hr{
+  border: none; /* Убираем стандартную границу */
+  border-top: 1px dashed var(--color-text-grey); /* Пунктирная линия */
+}
+table{
+  text-align: center;
+
+}
+td{
+  background-color:#fff;
+  font-size: 13px;
+  padding: 10px;
+  
+}
+th{
+  font-size: 14px;
+  color: var(--color-text-grey);
+  background-color:#fff;
+  padding: 10px;
+  font-family: var(--font-reg);
+}
+p{
+  font-size: 18px;
+  @include adaptiv-value("font-size", 18, 16, 0);
+  font-family: var(--font-reg);
+  line-height: 133%;
+  
+}
+.text-grey{
+  color: var(--color-text-grey);
+}
+.read-more{
+  font-size: 14px;
+  color:var(--color-blue);
+  border:none;
+  background:none
+
+}
+svg.rotated{
+  transform: rotate(180deg);
+
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  font-size: 14px;
+  color:var(--color-blue);
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color:var(--color-text);
+  transition: color 0.3s;
+}
+
+.breadcrumb-item a:hover {
+  color:var(--color-blue);
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "/";
+  margin: 0 8px;
+  color: #6c757d;
+}
+
+.btn {
+  background: var(--color-blue);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: color 0.1s ease;
+  cursor: pointer;
+ &.nav__link--account{
+    gap: 8px;
+  }
+  &:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-text);
+  }
+}
+.title-section h2{
+  color:var(--color-blue);
+  text-align: center;
+  @include adaptiv-value("font-size", 40, 32, 0);
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  margin-bottom: 35px;
+}
+
+.d-none{
+  display: none;
+}
+.d-block{
+  display: block;
+}

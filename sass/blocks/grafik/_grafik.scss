@@ -1,0 +1,354 @@
+.grafik{
+  @include adaptiv-value("padding-top", 45, 30, 0);
+  @include adaptiv-value("padding-bottom", 45, 30, 0);
+&__wrapper{
+  display: flex;
+  @include adaptiv-value("gap", 50, 10, 0);
+}
+  .cards{
+    width: 75%;
+  }
+}
+
+
+.filter-section input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  //border: 2px solid var(--color-yellow); /* Цвет рамки */
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  background-color:#fff
+}
+
+.filter-section input[type="checkbox"]:checked {
+  background-color:var(--color-yellow); /* Цвет заливки при выборе */
+}
+
+.filter-section input[type="checkbox"]:checked::after {
+  content: '✔';
+  color:var(--color-text);
+  font-size: 12px;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-weight: bold;
+}
+      .filter {
+        width: 24%;
+        
+      }
+      .filter-section {
+          margin-bottom: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px;
+          background:var(--color-grey);
+          border-radius: 5px;
+      }
+      .filter-section strong {
+          display: block;
+          @include adaptiv-value("font-size", 16, 13, 0);
+          margin-bottom: 8px;
+          color:var(--color-text-grey);
+      }
+      .filter-section label {
+          display: flex;
+          align-items: center;
+          @include adaptiv-value("font-size", 16, 13, 0);
+          color:var(--color-text);
+          cursor: pointer;
+          font-family: var(--font-semi);
+
+      }
+      .filter-section input[type="checkbox"] {
+          margin-right: 12px;
+          transform: scale(1.2);
+      }
+
+
+      .tour-card {
+        display: flex;
+        overflow: hidden;
+        @include adaptiv-value("gap", 30, 0, 0);
+        margin-bottom: 25px;
+        &__calendar{
+          display: flex;
+          margin: auto;
+          gap: 10px;
+          align-items:center
+        }
+    }
+    .tour-card__availability{
+      font-family: var(--font-semi);
+      position: relative;
+      bottom: 45px;
+      display: flex;
+      width: 116px;
+      height: 30px;
+      font-size: 16px;
+      color: var(--color-text-white);
+      background-color: #009E2F;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin-right: 9px;
+      }
+    }
+    .tour-card__request{
+      font-family: var(--font-semi);
+      position: relative;
+      bottom: 45px;
+      display: flex;
+      width: 116px;
+      height: 30px;
+      font-size: 16px;
+      color: var(--color-text);
+      background-color: #FFE100;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin-right: 9px;
+      }
+    }
+
+    .tour-card__image {
+        width: 300px;
+        height: 210px;
+        object-fit: cover;
+        border-radius:5px
+    }
+
+    .tour-card__info {
+        flex-grow: 1;
+        width: 60%;
+    }
+
+    .tour-card__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .tour-card__date {
+        font-size: 14px;
+        background: var(--color-blue);
+        color: white;
+        //padding: 5px 10px;
+        display: flex ;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        img{
+          width: 40px;
+        }
+    }
+
+    .tour-card__title {
+        color: var(--color-text);
+        font-size: 20px;
+        font-weight: bold;
+        flex: 1;
+    }
+
+    .tour-card__locations {
+        margin-top: 10px;
+        color:var(--color-blue);
+        
+        display: flex;
+        gap:8px;
+        align-items:center;
+        text-transform: uppercase;
+        p{
+          margin: 0;
+          font-size: 13px;
+        }
+    }
+
+    .tour-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 10px 0;
+        &__tag {
+          background:var(--color-grey);
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 12px;
+          font-family: var(--font-bold);
+          text-transform: uppercase;
+          color: var(--color-text);
+        }
+    }
+
+    .tour-card:hover .tour-card__details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tour-card__description {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .tour-card__price {
+       // @include adaptiv-value("font-size", 18, 15, 0);
+       font-size: 20px;
+        font-weight: bold;
+        color: var(--color-text);
+        background-color:var(--color-yellow);
+        padding: 10px;
+        text-align: right;
+        border-radius:3px;
+        display: inline-block;
+    }
+    .tour-card__details{
+      width: 168px;
+      height: 40px;
+      border-radius: 3px;
+      border: 3px solid yellow;
+      font-family: var(--font-semi);
+      font-size: 14px;
+      color: var(--color-text);
+      display: none;
+    
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between
+    }
+    .pagination__wrapper{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      li {
+        width: 40px;
+        height: 40px;
+        font-family: var(--font-semi);
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: var(--color-grey);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          color: var(--color-text);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+    }
+    .prev {
+      width: 125px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: var(--color-grey);
+    
+        a {
+          font-size: 14px;
+          color: var(--color-text);
+          font-family: var(--font-semi);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            margin-right: 10px;
+          }
+        }
+        &:hover,&:active{
+          background-color:var(--color-blue);
+        
+         a{
+          color:#fff;
+         }
+                  }
+    }
+    .pagination__wrapper li 
+    {
+      &:active, &:hover{
+        background-color: var(--color-blue);
+        a{
+          color: var(--color-text-white);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    
+    .next {
+      width: 125px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: var(--color-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        a {
+          font-size: 14px;
+          color: var(--color-text);
+          font-family: var(--font-semi);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            margin-left: 10px;
+          }
+        }
+        &:hover,&:active{
+          background-color:var(--color-blue)
+                  }
+    }
+
+    .mobile {
+
+      // .mobile__filter
+  
+      &__filter {
+        margin-bottom: 15px;
+        width: 100%;
+        height: 50px;
+        background-color: var(--color-grey);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-blue);
+        font-family: var(--font-semi);
+        font-size: 16px;
+        svg {
+          margin-left: 10px;
+        }
+      }
+  
+      // .mobile__filter-show
+  
+      &__filter-show {
+      }
+  }
+  
+    
+    
+  .show-price {
+    display: block !important;
+  }
+
+  .tour-card__info-block {
+    display: none;
+}

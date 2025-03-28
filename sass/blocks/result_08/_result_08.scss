@@ -1,0 +1,121 @@
+
+.sort-container {
+  background-color:#F3F4F7;
+  border-radius:5px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px
+}
+
+.sort-container label {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.sort-select {
+  flex-grow: 1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border:none;
+  background: #fff;
+  font-size: 14px;
+  font-family: var(--font-semi);
+  cursor: pointer;
+  max-width: 192px; /* Ограничиваем ширину */
+
+}
+
+
+.tour-card{
+.tour-tab{
+  background-color:var(--color-blue);
+  color:#fff;
+ justify-content: center;
+ padding:10px ;
+ font-size: 14px;
+ cursor: pointer;
+ .tour-card__calendar{
+justify-content: center;
+ }
+&__text{
+  display: none;
+  background-color:yellow;
+  width: 100%;
+ 
+}
+}
+
+
+&__geo{
+  color:var(--color-blue);
+  font-size: 14px;
+  font-family: var(--font-semi);
+  display: block;
+  margin-top: 15px;
+  svg{
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+ 
+}
+
+.tour-blockprice{
+  text-align: right;
+}
+.tours__info-adventages{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* два столбика */
+  gap: 10px; /* отступы между блоками */
+
+  li{
+    font-size: 16px;
+    margin-bottom: 0;
+    gap: 12px;
+    &:first-child{
+  grid-column: span 2; /* Этот блок занимает два столбца */
+}
+  }
+}
+}
+.cards-search{
+.tour-card__price{
+  text-align: center;
+}
+
+}
+
+.map-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom:10px;
+  width: 100%;
+  //width: 24%;
+
+}
+
+.map-container  {
+  display: block;
+    width: 100%;
+    height: 100px;
+    border-radius:5px
+}
+
+.map-button.btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+padding: 10px;
+gap: 5px;
+}
+
+
+
+.tour__wrapper{
+  .tour-card{
+    margin-bottom: 0;
+  }
+}
