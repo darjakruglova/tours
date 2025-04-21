@@ -53,6 +53,7 @@
           @include adaptiv-value("font-size", 16, 13, 0);
           margin-bottom: 8px;
           color:var(--color-text-grey);
+          font-weight: 500;
       }
       .filter-section label {
           display: flex;
@@ -72,19 +73,23 @@
       .tour-card {
         display: flex;
         overflow: hidden;
-        @include adaptiv-value("gap", 30, 0, 0);
-        margin-bottom: 25px;
-        &__calendar{
+        column-gap: 30px;
+        row-gap: 12px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        &__calendar{  
           display: flex;
           margin: auto;
           gap: 10px;
           align-items:center
         }
     }
+
+    
     .tour-card__availability{
       font-family: var(--font-semi);
-      position: relative;
-      bottom: 45px;
+      position: absolute;
+      bottom: 10px;
       display: flex;
       width: 116px;
       height: 30px;
@@ -99,8 +104,8 @@
     }
     .tour-card__request{
       font-family: var(--font-semi);
-      position: relative;
-      bottom: 45px;
+      position: absolute;
+      bottom: 10px;
       display: flex;
       width: 116px;
       height: 30px;
@@ -142,8 +147,10 @@
             align-items: center;
             justify-content: space-between;
             padding-right: 10px;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
         img{
           width: 40px;
         }
@@ -190,7 +197,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
     }
+    // .tour-card:hover .tour-card__price{
+    //   display: none;
+    // }
 
     .tour-card__description {
         font-size: 14px;
@@ -238,6 +249,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background-color 0.3s ease;
         a {
           color: var(--color-text);
           width: 100%;
@@ -266,15 +278,21 @@
           justify-content: center;
           svg {
             margin-right: 10px;
+           
           }
+          &:hover,&:active{
+            padding: 0 5px 0 5px;
+            background-color:var(--color-blue);
+            transition: background-color 0.3s ease;
+            color:#fff;
+            border-radius: 5px;
+             svg path{
+             fill: #fff;
+            
+            }
+                    }
         }
-        &:hover,&:active{
-          background-color:var(--color-blue);
-        
-         a{
-          color:#fff;
-         }
-                  }
+       
     }
     .pagination__wrapper li 
     {
@@ -299,24 +317,36 @@
       display: flex;
       align-items: center;
       justify-content: center;
-        a {
-          font-size: 14px;
-          color: var(--color-text);
-          font-family: var(--font-semi);
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          svg {
-            margin-left: 10px;
-          }
+      transition: background-color 0.3s ease;
+      a {
+        font-size: 14px;
+        color: var(--color-text);
+        font-family: var(--font-semi);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      
+        svg {
+          margin-left: 10px;
+         
         }
         &:hover,&:active{
-          background-color:var(--color-blue)
+          padding: 0 5px 0 5px;
+          background-color:var(--color-blue);
+          transition: background-color 0.3s ease;
+          color:#fff;
+          border-radius: 5px;
+          
+           svg path{
+           fill: #fff;
+          
+          }
                   }
+      }
     }
-
     .mobile {
 
       // .mobile__filter

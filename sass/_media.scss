@@ -1,6 +1,12 @@
 
 // Устройства Large (настольные компьютеры, менее 1200 пикселей)
 @media (max-width: 1199.98px) {
+  .filters{
+    position: relative;
+  }
+  .ekskyrs-forms{
+    flex-wrap: wrap;
+  }
   .tours__link-content{
     width: auto;
   }
@@ -35,15 +41,18 @@ align-items:start;
 
 }
   .tour-card {
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    gap: 0;
+    margin-bottom: 25px;
   }
   .tour-card__img{
     width: 100%;
     img {
+      @include adaptiv-value("height", 540, 200, 0);
       width: 100%;
-      height: 290px;
     }
   }
   .tours-content .tours__slider{
@@ -93,10 +102,29 @@ align-items:start;
   .rooms .card__map{
     flex: 1 1 100%;
   }
+  // .header__tabs-height{
+  //   max-height: 70px;
+  // }
 }
 
 // Устройства Small (телефоны с горизонтальной ориентацией, менее 768 пикселей)
 @media (max-width: 767.98px) { 
+  .filters__group {
+    padding: 15px;
+}
+  .tour-card{
+    &__info{
+      order: 3;
+    }
+    &__img{
+      order: 1;
+    }
+    .tab-content{
+      // margin-top: 42px;
+      order: 2;
+    }
+    
+  }
   .tour-card__date-none {
     display: none;
   }
@@ -155,6 +183,7 @@ br{
 
   }
   .tour-card__img {
+    order: 2;
     width: 100%;
 }
   .grafik .cards {
@@ -199,6 +228,57 @@ br{
   
   }
 @media (max-width: 575.98px) {
+  .tab.active:hover svg {
+    fill: black;
+  }
+  .tab.active {
+    background-color: inherit;
+    position: relative;
+    border-bottom: 3px solid var(--color-yellow); /* Основная линия */
+    color: var(--color-text);
+    // border-bottom: 5px solid var(--color-yellow);
+    // padding-bottom: 10px; /* Отступ под линию */
+    // background: lightblue;
+    // box-shadow: 0px 10px 0px red; /* Красная линия */
+  }
+  .tab.active::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Чуть ниже границы блока */
+    left: 0;
+    width: 100%;
+    height: 3px;
+}
+  .header__bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .header__bottom-grafik {
+    text-align: center;
+    width: 100%;
+  }
+  .header__bg{
+    display: none;
+  }
+
+  .rooms-details.active{
+    // background-color:var(--color-blue);
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .tours-content .tours__slider .swiper-button-next, .tours-content .tours__slider .swiper-button-prev {
+    width: 20px;
+    height: 25px;
+}
+  // Добавляем стили для прокрутки таблицы на мобильных устройствах
+  .table-container {
+    max-width: 86vw;
+    overflow-x: auto;
+    table{
+      display: block;
+    }
+    
+  }
   .tour-card__swiper{
     .prev-result {
     display: none;
@@ -208,9 +288,6 @@ br{
   }
 }
 
-  .tour-card__img img {
-    @include adaptiv-value("height", 540, 200, 0);
-  }
   .tour-card__header {
     flex-wrap: wrap;
     gap: 13px;
@@ -286,6 +363,7 @@ padding: 0;
   &__input{
     flex-direction: column;
     background-color:transparent;
+    gap: 20px;
     padding: 0;
     width: 100%;
   
@@ -386,10 +464,12 @@ padding: 0;
       }
       .logo-section {
         align-items: center;
+        margin-bottom: 10px;
       }
       .footer-bottom {
         .container {
           justify-content: center;
+          gap: 10px;
         }
       }
     }
@@ -407,7 +487,10 @@ padding: 0;
 
 
 
+
+
   @media (min-width: 767.98px) { 
+  
 .swiper-menu{
 .swiper-slide{
   width: auto;
@@ -416,3 +499,10 @@ padding: 0;
 
 }
   }
+
+ @media (max-width: 450px) { 
+    .dropdowns-container {
+      flex-wrap: wrap;
+    }
+  }
+  

@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 13px;
+    flex-wrap: wrap;
   }
   &__geo {
     display: flex;

@@ -1,0 +1,7 @@
+.content__programm{
+    @include adaptiv-value("font-size", 18, 16, 0);
+    background-color: var(--color-grey);
+    padding: 35px;
+    @include adaptiv-value("padding", 35, 10, 0);
+ 
+}

@@ -15,6 +15,7 @@
 @import "../sass/blocks/grafik_07/grafik_07";
 @import "../sass/blocks/result_08/result_08";
 @import "../sass/blocks/footer";
+@import "../sass/blocks/opicanie_09/opicanie_09";
 @import "../sass/media";
 
 /* styles.scss */
@@ -69,6 +70,9 @@
 body {
   font-family: var(--font-reg);
 }
+a{
+  font-size: 13px
+}
 h2{
   @include adaptiv-value("font-size", 30, 24, 0);
   color: var(--color-blue);
@@ -100,6 +104,9 @@ p{
   @include adaptiv-value("font-size", 18, 16, 0);
   font-family: var(--font-reg);
   line-height: 133%;
+  span{
+    color:var(--color-text-grey)
+  }
   
 }
 .text-grey{
@@ -109,7 +116,9 @@ p{
   font-size: 14px;
   color:var(--color-blue);
   border:none;
-  background:none
+  background:none;
+  font-family: var(--font-semi);
+  cursor: pointer;
 
 }
 svg.rotated{
@@ -133,6 +142,7 @@ svg.rotated{
   text-decoration: none;
   color:var(--color-text);
   transition: color 0.3s;
+  font-size: 14px;
 }
 
 .breadcrumb-item a:hover {
@@ -147,12 +157,12 @@ svg.rotated{
 
 .btn {
   background: var(--color-blue);
+
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  transition: color 0.1s ease;
   cursor: pointer;
  &.nav__link--account{
     gap: 8px;
@@ -160,6 +170,7 @@ svg.rotated{
   &:hover {
     background-color: var(--color-yellow);
     color: var(--color-text);
+    transition: background-color 0.3s ease;
   }
 }
 .title-section h2{

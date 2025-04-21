@@ -365,9 +365,24 @@ template {
 
 #date-range {
   padding: 14px 20px;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+#date-range::-webkit-input-placeholder {
+  color: var(--color-text);
+}
+#date-range::-moz-placeholder {
+  color: var(--color-text);
+}
+#date-range:-ms-input-placeholder {
+  color: var(--color-text);
+}
+#date-range::-ms-input-placeholder {
+  color: var(--color-text);
+}
+#date-range::placeholder {
+  color: var(--color-text);
 }
 
 .header {
@@ -380,11 +395,16 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 40%;
+  gap: 400px;
   padding: 15px 30px;
   background-color: #1464b2;
   color: #fff;
   font-size: 14px;
+}
+@media (max-width: 1920px) {
+  .header__bottom {
+    gap: calc(10px + 390 * (100vw - 360px) / (1920 - 360));
+  }
 }
 .header__bottom .big-search {
   cursor: pointer;
@@ -406,19 +426,32 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 @media (max-width: 1920px) {
   .header__link {
     gap: calc(5px + 45 * (100vw - 360px) / (1920 - 360));
   }
 }
+.header__link div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header__link div a {
+  margin-left: 70px;
+}
+@media (max-width: 1920px) {
+  .header__link div a {
+    margin-left: calc(20px + 50 * (100vw - 360px) / (1920 - 360));
+  }
+}
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 20px;
 }
@@ -453,7 +486,8 @@ template {
   overflow: hidden;
   margin: 0;
   background-color: #fff;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   margin-top: 10px;
 }
 
@@ -535,6 +569,12 @@ template {
   padding: 30px;
 }
 
+.form__group:nth-child(1) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px;
+}
+
 .form__group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -554,7 +594,13 @@ template {
   text-align: center;
   display: block;
   position: absolute;
-  top: 115px;
+  top: 44px;
+  left: 0;
+  min-width: 190px;
+  border-radius: 5px;
+}
+.form__group .age-selector p {
+  font-size: 12px;
 }
 .form__group .counter {
   margin-bottom: 20px;
@@ -590,6 +636,7 @@ template {
   padding: 5px 10px;
   min-width: 47px;
   cursor: pointer;
+  font-size: 12px;
 }
 .form__group .age-btn:hover {
   background-color: var(--color-yellow);
@@ -598,22 +645,62 @@ template {
 .form__group--button {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  min-width: 150px;
+  min-width: 120px;
 }
 
 .form__label {
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-grey);
   font-family: var(--font-semi);
 }
 
 .form__input {
   padding: 14px 20px;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
   background-color: #fff;
+  cursor: pointer;
+}
+.form__input::-webkit-scrollbar {
+  width: 4px;
+}
+.form__input::-webkit-scrollbar-track {
+  background: var(--color-grey);
+  border-radius: 2px;
+}
+.form__input::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  /* Для Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue) var(--color-grey);
+}
+.form__input::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue);
+}
+
+.form__input::-webkit-input-placeholder {
+  color: var(--color-text);
+}
+
+.form__input::-moz-placeholder {
+  color: var(--color-text);
+}
+
+.form__input:-ms-input-placeholder {
+  color: var(--color-text);
+}
+
+.form__input::-ms-input-placeholder {
+  color: var(--color-text);
+}
+
+.form__input::placeholder {
+  color: var(--color-text);
 }
 
 .form__button {
@@ -651,8 +738,9 @@ template {
 }
 
 .filters {
+  position: absolute;
+  width: 100%;
   background: #0077cc;
-  padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,6 +760,7 @@ template {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 14px;
+  padding: 30px 15px 30px 15px;
 }
 .filters__group-food input[type=checkbox] {
   border-radius: 50px !important;
@@ -743,6 +832,75 @@ template {
   display: none;
 }
 
+.toggle-button {
+  position: relative;
+  display: inline-block;
+}
+
+/* Псевдоэлемент стрелки */
+.form__input::after {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E");
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  -webkit-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.toggle-button.active::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+/* Обертка для select */
+.form__input-wrapper {
+  position: relative;
+  /* Стилизация полосы прокрутки */
+}
+
+/* Псевдоэлемент стрелки */
+.form__input-wrapper::after {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E");
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  -webkit-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.form__input-wrapper.active::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+.form__input-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.form__input-wrapper-left::after {
+  right: 15px;
+  top: 45px;
+}
+
 .services {
   padding-top: 60px;
   padding-bottom: 70px;
@@ -792,7 +950,7 @@ template {
   position: absolute;
   top: 30%;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
 }
 
 .custom-prev {
@@ -1151,7 +1309,9 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 15px;
+  gap: 13px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .title__geo {
   display: -webkit-box;
@@ -1558,6 +1718,12 @@ img {
   width: 65%;
   height: 100%;
 }
+.tours-content .tours__slider .swiper-button-next {
+  right: 0;
+}
+.tours-content .tours__slider .swiper-button-prev {
+  left: 0;
+}
 .tours-content .tours__slider .swiper-button-next, .tours-content .tours__slider .swiper-button-prev {
   background-color: var(--color-blue);
   padding: 5px;
@@ -1609,16 +1775,17 @@ img {
 .tours-content .tours__info h3 {
   font-size: 16px;
   color: var(--color-text-grey);
+  font-weight: 500;
 }
 .tours-content .tours__info iframe {
   width: 100%;
-  height: 400px;
+  height: 260px;
   border-radius: 10px;
   border: none;
 }
 @media (max-width: 1920px) {
   .tours-content .tours__info iframe {
-    height: calc(260px + 140 * (100vw - 360px) / (1920 - 360));
+    height: calc(200px + 60 * (100vw - 360px) / (1920 - 360));
   }
 }
 
@@ -1667,6 +1834,128 @@ img {
   font-family: var(--font-semi);
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.dropdowns-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #1464b2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+  font-family: sans-serif;
+}
+
+.dropdown-toggle {
+  background: rgba(243, 244, 247, 0.1215686275);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--color-grey);
+  margin: 15px;
+  font-size: 14px;
+}
+
+.dropdown-toggle:hover {
+  background-color: #ffe100;
+  color: var(--color-text);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 59px;
+  left: 15px;
+  background: white;
+  border: 2px solid #ffe100;
+  padding: 10px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.dropdown-menu label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-menu label input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+.dropdown-menu label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+}
+.dropdown-menu label:hover input[type=checkbox] {
+  border: 2px solid var(--color-yellow);
+}
+.dropdown-menu label input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  background-color: var(--color-grey);
+  margin-bottom: 2px;
+}
+.dropdown-menu label input[type=checkbox]:checked::before {
+  content: "✔";
+  background: var(--color-yellow);
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-content: center;
+  border-radius: 3px;
+}
+
+.ekskyrs-forms {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.ekskyrs-form:nth-child(1) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 220px;
+          flex: 1 1 220px;
+}
+
+.group-people {
+  min-width: 120px;
+}
+
+.group-duration {
+  min-width: 160px;
+}
+
+.ekskyrs-tabs {
+  overflow: visible;
 }
 
 .grafik {
@@ -1748,6 +2037,7 @@ img {
   font-size: 16px;
   margin-bottom: 8px;
   color: var(--color-text-grey);
+  font-weight: 500;
 }
 @media (max-width: 1920px) {
   .filter-section strong {
@@ -1784,13 +2074,13 @@ img {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  gap: 30px;
-  margin-bottom: 25px;
-}
-@media (max-width: 1920px) {
-  .tour-card {
-    gap: calc(0px + 30 * (100vw - 360px) / (1920 - 360));
-  }
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 12px;
+  margin-bottom: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .tour-card__calendar {
   display: -webkit-box;
@@ -1805,8 +2095,8 @@ img {
 
 .tour-card__availability {
   font-family: var(--font-semi);
-  position: relative;
-  bottom: 45px;
+  position: absolute;
+  bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1828,8 +2118,8 @@ img {
 
 .tour-card__request {
   font-family: var(--font-semi);
-  position: relative;
-  bottom: 45px;
+  position: absolute;
+  bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1891,8 +2181,10 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-right: 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .tour-card__date img {
   width: 40px;
@@ -2016,6 +2308,8 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .pagination__wrapper li a {
   color: var(--color-text);
@@ -2057,11 +2351,16 @@ img {
 .prev a svg {
   margin-right: 10px;
 }
-.prev:hover, .prev:active {
+.prev a:hover, .prev a:active {
+  padding: 0 5px 0 5px;
   background-color: var(--color-blue);
-}
-.prev:hover a, .prev:active a {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   color: #fff;
+  border-radius: 5px;
+}
+.prev a:hover svg path, .prev a:active svg path {
+  fill: #fff;
 }
 
 .pagination__wrapper li:active, .pagination__wrapper li:hover {
@@ -2096,6 +2395,8 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .next a {
   font-size: 14px;
@@ -2116,8 +2417,16 @@ img {
 .next a svg {
   margin-left: 10px;
 }
-.next:hover, .next:active {
+.next a:hover, .next a:active {
+  padding: 0 5px 0 5px;
   background-color: var(--color-blue);
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  border-radius: 5px;
+}
+.next a:hover svg path, .next a:active svg path {
+  fill: #fff;
 }
 
 .mobile__filter {
@@ -2200,6 +2509,15 @@ img {
   margin-bottom: 20px;
 }
 
+.tour-card__date-none-svg {
+  width: 20px;
+  height: 19px;
+  background-color: var(--color-yellow);
+  padding: 12px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
 .tour-card .tour-card__img {
   position: relative;
 }
@@ -2209,9 +2527,6 @@ img {
 }
 
 .sort-container {
-  background-color: #F3F4F7;
-  border-radius: 5px;
-  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2220,37 +2535,124 @@ img {
           align-items: center;
   gap: 10px;
   margin-bottom: 25px;
+  position: relative;
+  background-color: var(--color-grey);
+  padding: 12px 25px;
 }
 
 .sort-container label {
   font-size: 14px;
   color: #666;
-  white-space: nowrap;
+  margin-right: 10px;
 }
 
 .sort-select {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
   font-size: 14px;
   font-family: var(--font-semi);
+  color: #04020F;
   cursor: pointer;
-  max-width: 192px; /* Ограничиваем ширину */
+  position: relative;
+  min-width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Обертка для select */
+.sort-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Псевдоэлемент стрелки */
+.sort-wrapper::after {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E");
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  -webkit-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.sort-wrapper.active::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 180px;
+  display: none;
+}
+.sort-dropdown.active {
+  display: block;
+}
+.sort-dropdown .sort-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.sort-dropdown .sort-option:hover {
+  background-color: #F7FAFC;
+}
+.sort-dropdown .sort-option.selected {
+  background-color: #FFD700;
+  color: #1A202C;
 }
 
 .tour-card .tour-tab {
   background-color: var(--color-blue);
   color: #fff;
+  font-family: var(--font-semi);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px;
   font-size: 14px;
   cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.tour-card .tour-tab:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+}
+.tour-card .tour-tab:hover svg path {
+  fill: var(--color-text);
+}
+.tour-card .tour-tab.active {
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+}
+.tour-card .tour-tab.active svg path {
+  fill: var(--color-text);
 }
 .tour-card .tour-tab .tour-card__calendar {
   -webkit-box-pack: center;
@@ -2269,6 +2671,11 @@ img {
   display: block;
   margin-top: 15px;
 }
+.tour-card__geo:hover {
+  color: var(--color-text);
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
 .tour-card__geo svg {
   vertical-align: middle;
   margin-right: 5px;
@@ -2278,8 +2685,10 @@ img {
 }
 .tour-card .tours__info-adventages {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* два столбика */
-  gap: 10px; /* отступы между блоками */
+  grid-template-columns: repeat(2, 1fr);
+  /* два столбика */
+  gap: 10px;
+  /* отступы между блоками */
 }
 .tour-card .tours__info-adventages li {
   font-size: 16px;
@@ -2287,7 +2696,8 @@ img {
   gap: 12px;
 }
 .tour-card .tours__info-adventages li:first-child {
-  grid-column: span 2; /* Этот блок занимает два столбца */
+  grid-column: span 2;
+  /* Этот блок занимает два столбца */
 }
 
 .cards-search .tour-card__price {
@@ -2316,6 +2726,16 @@ img {
   left: 50%;
   padding: 10px;
   gap: 5px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.map-button.btn:hover, .map-button.btn:active {
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+  border-radius: 5px;
+}
+.map-button.btn:hover svg path, .map-button.btn:active svg path {
+  fill: var(--color-text);
 }
 
 .tour__wrapper .tour-card {
@@ -2460,7 +2880,31 @@ img {
   text-decoration: underline;
 }
 
+.content__programm {
+  font-size: 18px;
+  background-color: var(--color-grey);
+  padding: 35px;
+  padding: 35px;
+}
+@media (max-width: 1920px) {
+  .content__programm {
+    font-size: calc(16px + 2 * (100vw - 360px) / (1920 - 360));
+  }
+}
+@media (max-width: 1920px) {
+  .content__programm {
+    padding: calc(10px + 25 * (100vw - 360px) / (1920 - 360));
+  }
+}
+
 @media (max-width: 1199.98px) {
+  .filters {
+    position: relative;
+  }
+  .ekskyrs-forms {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   .tours__link-content {
     width: auto;
   }
@@ -2495,19 +2939,26 @@ img {
   }
   .tour-card {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 0;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 25px;
   }
   .tour-card__img {
     width: 100%;
   }
   .tour-card__img img {
+    height: 540px;
     width: 100%;
-    height: 290px;
   }
+}
+@media (max-width: 991.98px) and (max-width: 1920px) {
+  .tour-card__img img {
+    height: calc(200px + 340 * (100vw - 360px) / (1920 - 360));
+  }
+}
+@media (max-width: 991.98px) {
   .tours-content .tours__slider {
     width: 67%;
   }
@@ -2580,6 +3031,24 @@ img {
   }
 }
 @media (max-width: 767.98px) {
+  .filters__group {
+    padding: 15px;
+  }
+  .tour-card__info {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .tour-card__img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .tour-card .tab-content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
   .tour-card__date-none {
     display: none;
   }
@@ -2642,6 +3111,9 @@ img {
         flex-wrap: wrap;
   }
   .tour-card__img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     width: 100%;
   }
   .grafik .cards {
@@ -2677,22 +3149,58 @@ img {
   }
 }
 @media (max-width: 575.98px) {
+  .tab.active:hover svg {
+    fill: black;
+  }
+  .tab.active {
+    background-color: inherit;
+    position: relative;
+    border-bottom: 3px solid var(--color-yellow); /* Основная линия */
+    color: var(--color-text);
+  }
+  .tab.active::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Чуть ниже границы блока */
+    left: 0;
+    width: 100%;
+    height: 3px;
+  }
+  .header__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
+  .header__bottom-grafik {
+    text-align: center;
+    width: 100%;
+  }
+  .header__bg {
+    display: none;
+  }
+  .rooms-details.active {
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .tours-content .tours__slider .swiper-button-next, .tours-content .tours__slider .swiper-button-prev {
+    width: 20px;
+    height: 25px;
+  }
+  .table-container {
+    max-width: 86vw;
+    overflow-x: auto;
+  }
+  .table-container table {
+    display: block;
+  }
   .tour-card__swiper .prev-result {
     display: none;
   }
   .tour-card__swiper .next-result {
     display: none;
   }
-  .tour-card__img img {
-    height: 540px;
-  }
-}
-@media (max-width: 575.98px) and (max-width: 1920px) {
-  .tour-card__img img {
-    height: calc(200px + 340 * (100vw - 360px) / (1920 - 360));
-  }
-}
-@media (max-width: 575.98px) {
   .tour-card__header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -2784,6 +3292,7 @@ img {
         -ms-flex-direction: column;
             flex-direction: column;
     background-color: transparent;
+    gap: 20px;
     padding: 0;
     width: 100%;
   }
@@ -2875,11 +3384,13 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-bottom: 10px;
   }
   .footer .footer-bottom .container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 10px;
   }
   .tours__large .tours__link-title {
     -webkit-box-flex: 0;
@@ -2891,6 +3402,12 @@ img {
   .swiper-menu .swiper-slide {
     width: auto;
     height: auto;
+  }
+}
+@media (max-width: 450px) {
+  .dropdowns-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 /* styles.scss */
@@ -2937,6 +3454,10 @@ body {
   font-family: var(--font-reg);
 }
 
+a {
+  font-size: 13px;
+}
+
 h2 {
   font-size: 30px;
   color: var(--color-blue);
@@ -2981,6 +3502,9 @@ p {
     font-size: calc(16px + 2 * (100vw - 360px) / (1920 - 360));
   }
 }
+p span {
+  color: var(--color-text-grey);
+}
 
 .text-grey {
   color: var(--color-text-grey);
@@ -2991,6 +3515,8 @@ p {
   color: var(--color-blue);
   border: none;
   background: none;
+  font-family: var(--font-semi);
+  cursor: pointer;
 }
 
 svg.rotated {
@@ -3018,6 +3544,7 @@ svg.rotated {
   color: var(--color-text);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  font-size: 14px;
 }
 
 .breadcrumb-item a:hover {
@@ -3037,8 +3564,6 @@ svg.rotated {
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
   cursor: pointer;
 }
 .btn.nav__link--account {
@@ -3047,6 +3572,8 @@ svg.rotated {
 .btn:hover {
   background-color: var(--color-yellow);
   color: var(--color-text);
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .title-section h2 {

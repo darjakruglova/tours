@@ -1,106 +1,194 @@
-
 .sort-container {
-  background-color:#F3F4F7;
-  border-radius:5px;
-  padding: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  position: relative;
+  background-color:var(--color-grey);
+  padding: 12px 25px;
 }
 
 .sort-container label {
   font-size: 14px;
   color: #666;
-  white-space: nowrap;
+  margin-right: 10px;
 }
 
 .sort-select {
-  flex-grow: 1;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border:none;
+  appearance: none;
   background: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
   font-size: 14px;
   font-family: var(--font-semi);
+  color:#04020F;
   cursor: pointer;
-  max-width: 192px; /* Ограничиваем ширину */
+  position: relative;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+
 
 }
+/* Обертка для select */
+.sort-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+/* Псевдоэлемент стрелки */
+.sort-wrapper::after {
+  content: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E');
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  transition: transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.sort-wrapper.active::after {
+  transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 180px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .sort-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #F7FAFC;
+    }
+
+    &.selected {
+      background-color: #FFD700;
+      color: #1A202C;
+    }
+  }
+}
 
 .tour-card{
-.tour-tab{
-  background-color:var(--color-blue);
-  color:#fff;
- justify-content: center;
- padding:10px ;
- font-size: 14px;
- cursor: pointer;
- .tour-card__calendar{
-justify-content: center;
+  .tour-tab{
+    background-color:var(--color-blue);
+    color:#fff;
+    font-family: var(--font-semi);
+   justify-content: center;
+   padding:10px ;
+   font-size: 14px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+&:hover{
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+  svg path {
+    fill: var(--color-text);
+  }
  }
-&__text{
-  display: none;
-  background-color:yellow;
-  width: 100%;
- 
-}
-}
 
 
-&__geo{
-  color:var(--color-blue);
-  font-size: 14px;
-  font-family: var(--font-semi);
-  display: block;
-  margin-top: 15px;
-  svg{
-    vertical-align: middle;
-    margin-right: 5px;
+   &.active{
+    background-color: var(--color-yellow);
+    color: var(--color-text);
+    svg path {
+      fill: var(--color-text);
+    }
+   }
+   .tour-card__calendar{
+  justify-content: center;
+   }
+  &__text{
+    display: none;
+    background-color:yellow;
+    width: 100%;
+   
   }
- 
-}
+  }
+  
+  &__geo {
+    color: var(--color-blue);
+    font-size: 14px;
+    font-family: var(--font-semi);
+    display: block;
+    margin-top: 15px;
+    
+    &:hover{
+      color:var(--color-text);
+      transition: color 0.3s ease;
+    }
 
-.tour-blockprice{
-  text-align: right;
-}
-.tours__info-adventages{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* два столбика */
-  gap: 10px; /* отступы между блоками */
+    svg {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
 
-  li{
-    font-size: 16px;
-    margin-bottom: 0;
-    gap: 12px;
-    &:first-child{
-  grid-column: span 2; /* Этот блок занимает два столбца */
-}
+  }
+
+  .tour-blockprice {
+    text-align: right;
+  }
+
+  .tours__info-adventages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* два столбика */
+    gap: 10px;
+    /* отступы между блоками */
+
+    li {
+      font-size: 16px;
+      margin-bottom: 0;
+      gap: 12px;
+
+      &:first-child {
+        grid-column: span 2;
+        /* Этот блок занимает два столбца */
+      }
+    }
   }
 }
-}
-.cards-search{
-.tour-card__price{
-  text-align: center;
-}
+
+.cards-search {
+  .tour-card__price {
+    text-align: center;
+  }
 
 }
 
 .map-container {
   position: relative;
   display: inline-block;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   width: 100%;
   //width: 24%;
 
 }
 
-.map-container  {
+.map-container {
   display: block;
-    width: 100%;
-    height: 100px;
-    border-radius:5px
+  width: 100%;
+  height: 100px;
+  border-radius: 5px
 }
 
 .map-button.btn {
@@ -108,14 +196,30 @@ justify-content: center;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-padding: 10px;
-gap: 5px;
+  padding: 10px;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+    &:hover,&:active{
+      background-color:var(--color-yellow);
+      color:var(--color-text);
+      border-radius: 5px;
+       svg path{
+       fill: var(--color-text);
+      
+      }
+              }
+  
+
 }
 
 
 
-.tour__wrapper{
-  .tour-card{
+.tour__wrapper {
+  .tour-card {
     margin-bottom: 0;
   }
 }
+
+// .tour-card .result-price:hover{
+//   display: flex;
+// }

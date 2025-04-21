@@ -39,9 +39,13 @@
 }
 #date-range {
   padding: 14px 20px;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  &::placeholder{
+    color: var(--color-text);
+   }
+   
 }
 
 .header {
@@ -56,7 +60,7 @@
   &__bottom {
     display: flex;
     align-items: center;
-    gap: 40%;
+    @include adaptiv-value("gap", 400, 10, 0);
     padding: 15px 30px;
     background-color: #1464b2;
     color: #fff;
@@ -78,10 +82,16 @@
     display: flex;
     @include adaptiv-value("gap", 50, 5, 0);
     justify-content: space-between;
+    flex: 1 1 100%;
+  }
+  &__link div{
+    display: flex;
+  }
+  &__link div a{
+    @include adaptiv-value("margin-left", 70, 20, 0);
   }
   &__top {
     display: flex;
-    justify-content: space-between;
     @include adaptiv-value("padding-top", 30, 10, 0);
     @include adaptiv-value("padding-bottom", 20, 10, 0);
   }
@@ -105,7 +115,8 @@
    overflow: hidden;
     margin: 0;
     background-color: #fff;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     margin-top: 10px;
   }
 }
@@ -186,6 +197,10 @@
   padding: 30px;
 }
 
+.form__group:nth-child(1){
+  flex: 1 1 400px;
+}
+
 .form__group {
   display: flex;
   flex-direction: column;
@@ -195,10 +210,15 @@
     background-color: #fff;
     padding: 20px;
     text-align: center;
-
     display: block;
     position: absolute;
-    top: 115px;
+    top: 44px;
+    left: 0;
+    min-width: 190px;
+    border-radius: 5px;
+    p{
+      font-size: 12px;
+    }
   }
   .counter {
     margin-bottom: 20px;
@@ -236,6 +256,7 @@
     padding: 5px 10px;
     min-width: 47px;
     cursor: pointer;
+    font-size: 12px;
     &:hover{
       background-color:var(--color-yellow)
     }
@@ -244,22 +265,52 @@
 
 .form__group--button {
   align-self: flex-end;
-  min-width: 150px;
+  min-width: 120px;
 }
 
 .form__label {
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-grey);
   font-family: var(--font-semi);
 }
 
 .form__input {
   padding: 14px 20px;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
   background-color: #fff;
+  cursor: pointer;
+
+
+
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-grey);
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-blue);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--color-blue);
+    }
+      /* Для Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue) var(--color-grey);
+  }
+}
+
+.form__input::placeholder{
+ color: var(--color-text);
 }
 
 .form__button {
@@ -312,18 +363,20 @@
 }
 
 .filters {
+  position: absolute;
+  width: 100%;
   background: #0077cc;
-  padding: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  //gap: 20px;
+  //gap: 25px;
   color: #fff;
 
   &__group {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    padding: 30px 15px 30px 15px;
 
     &-food {
       & input[type="checkbox"] {
@@ -398,4 +451,92 @@
 
 .hidden {
   display: none;
+}
+
+
+// .flatpickr-input {
+//   position: relative;
+//   display: inline-block;
+// }
+
+// /* Псевдоэлемент стрелки */
+// .flatpickr-input::after {
+//   content: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E');
+//   position: absolute;
+//   right: 12px;
+//   top: 50%;
+//   width: 14px; /* Увеличена ширина */
+//   height: 14px; /* Увеличена высота */
+//   transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+//   transition: transform 0.3s ease; /* Плавное изменение угла */
+//   pointer-events: none;
+// }
+
+// /* Анимация поворота стрелки вверх */
+// .flatpickr-input.active::after {
+//   transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+//   border: 1px solid red;
+// }
+
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+}
+
+/* Псевдоэлемент стрелки */
+.form__input::after {
+  content: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E');
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  transition: transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.toggle-button.active::after {
+  transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+
+
+/* Обертка для select */
+.form__input-wrapper{
+  position: relative;
+  //display: inline-block;
+   /* Стилизация полосы прокрутки */
+ 
+
+
+}
+
+/* Псевдоэлемент стрелки */
+.form__input-wrapper::after {
+  content: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%227%22%20fill%3D%22%23FFE100%22%20%2F%3E%3Cpath%20d%3D%22M7.85749%208.57084C7.46909%209.21818%206.53091%209.21818%206.14251%208.57084L4.9087%206.5145C4.50878%205.84797%204.9889%205%205.76619%205L8.23381%205C9.0111%205%209.49122%205.84797%209.0913%206.5145L7.85749%208.57084Z%22%20fill%3D%22%2304020F%22%20%2F%3E%3C%2Fsvg%3E');
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px; /* Увеличена ширина */
+  height: 14px; /* Увеличена высота */
+  transform: translateY(-50%) rotate(0deg); /* Изначальный угол 0 */
+  transition: transform 0.3s ease; /* Плавное изменение угла */
+  pointer-events: none;
+}
+
+/* Анимация поворота стрелки вверх */
+.form__input-wrapper.active::after {
+  transform: translateY(-50%) rotate(180deg); /* Стрелка переворачивается на 180 градусов */
+}
+
+.form__input-wrapper select{
+  width: 100%;
+  appearance: none; 
+}
+.form__input-wrapper-left::after{
+  right: 15px;
+  top: 45px;
 }
